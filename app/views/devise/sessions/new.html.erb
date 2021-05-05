@@ -7,8 +7,12 @@
   </div>
 
   <div class="field">
-  <%= f.hidden_field :password, autocomplete: "new-password", :value => "password_test" %>
-</div>
+    <%= f.hidden_field :password, autocomplete: "new-password", :value => "password_test" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :email, autocomplete: "new-email", :value => "email@something.com" %>
+  </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">

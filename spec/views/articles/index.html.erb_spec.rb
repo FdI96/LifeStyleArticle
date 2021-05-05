@@ -2,6 +2,14 @@ require 'rails_helper'
 
 RSpec.describe "articles/index", type: :view do
   before(:each) do
+    assign(:users, [
+      User.create!(
+        id: 2,
+        username: 'Username1',
+        password: 'Password',
+        email: 'email@email.com'
+        )
+    ])
     assign(:articles, [
       Article.create!(
         author_id: 2,
