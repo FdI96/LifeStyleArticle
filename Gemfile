@@ -33,9 +33,14 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# the previous webpacker's version was 3.5
+gem 'webpacker', '~> 5.0'
 
-gem 'webpacker', '~> 3.5'
+# Because I'm using webpacker it dind't work anyways.
+gem 'jquery-rails'
 
+# to make the link_to and sign_out route with devise work
+gem "rails-ujs"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
