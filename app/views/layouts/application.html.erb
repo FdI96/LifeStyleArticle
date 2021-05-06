@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -19,19 +19,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <%= link_to 'Home', root_path, class: 'white-color link-light' %>|
+            <%= link_to 'Home', root_path, class: 'text-white text-decoration-none' %>|
           </li>
           <li class="nav-item">
-            <%= link_to 'Create Article', new_article_path, :class => 'white-color' %>|
+            <%= link_to 'Create Article', new_article_path, class: 'text-white text-decoration-none' %>|
           </li>
         </ul>
          <li class="d-flex nav-item dropdown">
-            <a class="nav-link dropdown-toggle white-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle white-color text-white text-decoration-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               User
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><%= link_to 'Log In', new_user_session_path %></li>
-              <li><%= button_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+              <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn-to-link' %></li>
               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             </ul>
           </li>
@@ -42,10 +42,11 @@
   <p class="alert"><%= alert %></p>
   <body>
     <%= yield %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
   </body>
   <nav class="navbar fixed-bottom bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand white-color" href="#">Footer</a>
+      <a class="navbar-brand white-color text-white center-text" href="#">Contact us:</a>
     </div>
   </nav>
   

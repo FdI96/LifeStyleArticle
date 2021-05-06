@@ -2,7 +2,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @article.author_id %>
+  <%= @article.author.username %>
 </p>
 
 <p>
@@ -17,7 +17,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @article.image %>
+  <% if @article.image.attached? %>
+    <img src="<%=(url_for(@article.image))%>" alt="Img from <%=@article.author.username%>">
+  <%end%>
 </p>
 
 <p>
