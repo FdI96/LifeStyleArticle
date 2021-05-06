@@ -17,7 +17,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.author_id %></td>
+        <td><%= article.author.username %></td>
         <td><%= article.title %></td>
         <td><%= article.text %></td>
         <td><%= article.image %></td>
