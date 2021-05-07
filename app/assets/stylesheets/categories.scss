@@ -1,3 +1,26 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar {
+  background-color: #4D443D;
+}
+
+.nav-title {
+  color: orange;
+  font-size: 20px;
+}
+
+.btn-to-link {
+  background-color: white;
+  border: none;
+}
+
+.most-voted-img {
+  width: 100%;
+  height: 400px;
+}
+
+.tbody {
+  min-width: 100%;
+}

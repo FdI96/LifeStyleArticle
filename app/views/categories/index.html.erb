@@ -2,28 +2,17 @@
 
 <h1>Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Priority</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.priority %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+<div class="first-row row">
+  <img src="https://cars.usnews.com/pics/size/640x420/static/images/article/202003/128416/1_title_2019_kia_cadenza_640x420.jpg" alt="most-voted-article" class="most-voted-img">
+</div>
+<div class="second-row row">
+  <table>
+    <tbody class="tbody d-inline-flex justify-content-center row">
+      <% @categories.each do |category| %>
+        <tr class="col-3">
+          <td><%= link_to "#{category.name}", category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
