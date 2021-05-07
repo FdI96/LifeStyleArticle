@@ -5,6 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
 
-  has_many :votes
-  has_many :articles, foreign_key: :author_id
+  has_many :votes, dependent: :destroy
+  has_many :articles, foreign_key: :author_id, dependent: :destroy
 end
