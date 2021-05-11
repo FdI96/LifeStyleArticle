@@ -6,5 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable
 
   has_many :votes, dependent: :destroy
-  has_many :articles, foreign_key: :author_id, dependent: :destroy
+  has_many :articles, dependent: :destroy
 end

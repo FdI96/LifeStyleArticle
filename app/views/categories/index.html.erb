@@ -3,7 +3,7 @@
 <h1>Categories</h1>
 
 <div class="first-row row">
-  <img src="https://cars.usnews.com/pics/size/640x420/static/images/article/202003/128416/1_title_2019_kia_cadenza_640x420.jpg" alt="most-voted-article" class="most-voted-img">
+  <img src="<%= url_for(most_voted(@articles).image)%>" alt="most-voted-article" class="most-voted-img">
 </div>
 <div class="second-row row">
   <table>
@@ -11,6 +11,8 @@
       <% @categories.each do |category| %>
         <tr class="col-3">
           <td><%= link_to "#{category.name}", category %></td>
+          <%= next if category.articles.last.nil?%>
+          <img src="<%= url_for(category.articles.last.image) %>" alt="" class="category-portrait">      
         </tr>
       <% end %>
     </tbody>
