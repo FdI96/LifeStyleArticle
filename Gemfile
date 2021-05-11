@@ -40,7 +40,7 @@ gem 'webpacker', '~> 5.0'
 gem 'jquery-rails'
 
 # to make the link_to and sign_out route with devise work
-gem "rails-ujs"
+gem 'rails-ujs'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
