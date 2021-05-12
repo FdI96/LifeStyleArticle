@@ -14,7 +14,8 @@
   </thead>
 
   <tbody>
-    <% @category.articles.each do |article| %>
+    
+    <% @category.articles.with_attached_image.includes([:author]).each do |article| %>
       <tr>
         <td><%= article.author.username %></td>
         <td><%= article.title %></td>

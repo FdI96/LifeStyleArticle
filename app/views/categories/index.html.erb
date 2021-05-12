@@ -12,7 +12,7 @@
         <tr class="col-3">
           <td><%= link_to "#{category.name}", category %></td>
           <%= next if category.articles.last.nil?%>
-          <img src="<%= url_for(category.articles.last.image) %>" alt="" class="category-portrait">      
+          <img src="<%= url_for(category.articles.last.image) %>" alt="" class="category-portrait">
         </tr>
       <% end %>
     </tbody>
