@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <%= vote_or_unvote_btn(@article) %>
+  Votes: <%= @article.votes.length%>
+</p>
+
+<p>
   <strong>Image:</strong>
   <% if @article.image.attached? %>
     <img src="<%=(url_for(@article.image))%>" alt="Img from <%=@article.author.username%>">
