@@ -3,6 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+# Cloudinary gem to upload images on Heroku
+gem 'cloudinary'
+
+# to handle cloudinary
+gem 'image_processing', '~> 1.2'
+# Handle image on heroku
+gem 'active_model_serializers'
+gem 'active_storage_validations'
+
+# Create 
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record
