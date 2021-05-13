@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Categories</h1>
-
 <div class="first-row row">
-  <img src="<%= url_for(most_voted(@articles).image)%>" alt="most-voted-article" class="most-voted-img">
+  <img src="<%= url_for(most_voted(@articles).image)%>" alt="most-voted-article" class="most-voted-img mt-4 p-0">
 </div>
-<div class="second-row row">
-  <table>
-    <tbody class="tbody d-inline-flex justify-content-center row">
-      <% @categories.each do |category| %>
-        <tr class="col-3">
-          <td><%= link_to "#{category.name}", category %></td>
-          <%= next if category.articles.last.nil?%>
-          <img src="<%= url_for(category.articles.last.image) %>" alt="" class="category-portrait">
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="second-row row mt-2 mb-2">
+  <% @categories.each do |category| %>
+    <div class="card-index card bg-dark text-whit col m-1 p-0">
+      <%= next if category.articles.last.nil? %>
+      <img src="<%= url_for(category.articles.last.image) %>" class="card-img card-index p-0" alt="...">
+      <div class="card-img-overlay p-0">
+        <h5 class="card-title position-relative">
+          <% if user_signed_in?%>            
+            <%= link_to "#{category.name}", category, class: 'text-white underline-yellow' %>            
+          <% else %>            
+            <%= link_to "#{category.name}", new_user_session_path, class: 'text-white' %>            
+          <% end %>
+        </h5>
+        <p class="card-text top-50 start-0  text-white"><%= category.articles.last.title %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
