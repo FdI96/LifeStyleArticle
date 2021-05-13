@@ -1,6 +1,6 @@
 <div class="first-row row">
-  <% if most_voted(@articles).image.nil? %>
-    <h2>There aren't votes for any image</h2>
+  <% if most_voted(@articles).image.blank? %>
+    <h1 class="text-center text-warning">There aren't votes for any image</h1>
   <% else %>
     <img src="<%= url_for(most_voted(@articles).image) %>" alt="most-voted-article" class="most-voted-img mt-4 p-0">
   <% end %>
