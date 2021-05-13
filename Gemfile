@@ -12,7 +12,7 @@ gem 'image_processing', '~> 1.2'
 gem 'active_model_serializers'
 gem 'active_storage_validations'
 
-# Create 
+# Create env file
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

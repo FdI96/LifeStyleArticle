@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  validates :image, presence: true, content_type: %i[png jpg jpeg]
+  validates :image, presence: true
   validates :title, presence: true
   validates :text, presence: true
   belongs_to :author, class_name: 'User'
