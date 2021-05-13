@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MICA</title>
+    <title>Holly</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +12,7 @@
   </head>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container-fluid">
-      <h1 class="nav-title">MiCa-></h1>
+      <h1 class="nav-title">HoLLy</h1>
       <ul class="navbar-nav ml-0">
           <li class="nav-item">
             <%= link_to 'Home', root_path, class: 'text-white text-decoration-none' %>|
@@ -28,23 +28,16 @@
           <% end %>
         
         </ul>
-      <div class="collapse navbar-collapse d-flex justify-content-evenly position-relative" id="navbarSupportedContent">
-        
-        <% if user_signed_in? %>
-          <div class='text-center'>
-            <% @categories.each do |category| %>            
-              <span><%= link_to "#{category.name}", category, class: 'text-white text-decoration-none' %></span>            
-            <% end %>
-          </div>
-        <% end %>
+      <div class="collapse navbar-collapse d-flex justify-content-evenly position-relative" id="navbarSupportedContent">        
+        <%= show_lay_cat(@categories) %>
         <div class="dropdown-pos d-flex nav-item dropdown">
           <a class="nav-link dropdown-toggle white-color text-white text-decoration-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             User
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to 'Log In', new_user_session_path %></li>
-            <li><%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn-to-link' %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= show_sign_in %></li>
+            <li><%= show_sign_out %></li>
+            <li><%= show_sign_up %></li>
           </ul>
         </div>        
       </div>

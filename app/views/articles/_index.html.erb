@@ -1,21 +1,4 @@
 <h1 class="mt-5"><%= @category.name %></h1>
-<div class="row">    
-  <% @category.articles.with_attached_image.includes([:author, :votes]).each do |article| %>
-    <div class="row col-6">
-        <div class="col-6">
-          <img src="<%=(url_for(article.image))%>" alt="..." class="img-card">
-        </div>
-        <div class="col-6">
-          <div class="card-body">
-            <h5 class="card-title text-warning text-decoration-underline"><%= article.title %></h5>
-            <p class="card-text"><%= article.text %></p>
-            <p class="card-text">
-              <%= vote_or_unvote_btn(article) %>
-              Votes: <%= article.votes.length %>
-            </p>
-            <p class="card-text"><small class="text-muted"><%= article.author.username %></small></p>
-          </div>
-        </div>
-    </div>
-  <% end %>
+<div class="row">  
+  <%= display_arts(@category) %>
 </div>
