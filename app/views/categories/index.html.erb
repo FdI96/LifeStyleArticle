@@ -1,5 +1,9 @@
 <div class="first-row row">
-  <img src="<%= url_for(most_voted(@articles).image) %>" alt="most-voted-article" class="most-voted-img mt-4 p-0">
+  <% if most_voted(@articles).image.nil? %>
+    <h2>There aren't votes for any image</h2>
+  <% else %>
+    <img src="<%= url_for(most_voted(@articles).image) %>" alt="most-voted-article" class="most-voted-img mt-4 p-0">
+  <% end %>
 </div>
 <div class="second-row row mt-2 mb-2">
   <%= display_cat(@categories) %>
