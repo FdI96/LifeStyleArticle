@@ -57,8 +57,6 @@ Setup database with:
 ```
 $ rails db:create before migration
 $ rails db:migrate (creates and migrates the database)
-$ rails db:seed    (seeds the database with default values)
-$ rake database:correction_seq_id  (corrects the postgreSQL sequence after seed)
 ```
 
 ### Usage
