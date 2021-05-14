@@ -33,8 +33,8 @@ module ApplicationHelper
     html << if most_voted(articles).nil?
               content_tag(:h1, "There aren't votes for any image", class: 'text-center text-warning mt-5')
             else
-              image_tag(url_for(most_voted(@articles).image), class: 'most-voted-img mt-4 p-0',
-                                                              data: 'most-voted-article')
+              link_to(image_tag(url_for(most_voted(@articles).image), class: 'most-voted-img mt-4 p-0',
+                                                              data: 'most-voted-article'), article_path(most_voted(articles)))
             end
     html.html_safe
   end
