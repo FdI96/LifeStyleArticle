@@ -6,11 +6,11 @@ This is the Capstone project that signs the completion of the RubyOnRails module
 It is a web app where users can sign up, sign in, log out and create articles.
 As a logged in user, it is possible to create articles and vote on articles.
 
-![screenshot-1](app/assets/images/screenshot.png)
+![screenshot-1](app/assets/images/Hollyindex.png)
+![screenshot-2](app/assets/images/Hollyartindex.png)
+![screenshot-3](app/assets/images/Hollyshow.png)
 
 ### Built With
-
-This project was built using these technologies.
 
 - Ruby & Ruby on Rails
 - Rspec / Capybara
@@ -21,13 +21,9 @@ This project was built using these technologies.
 
 <!-- Live Demo -->
 
-## Walkthrough Video and Deployment (Heroku)
+## Deployment (Heroku)
 
-- Walkthrough --> [VIDEO-DEMO](https://share.vidyard.com/watch/Fm9iStFP1rbXVPRF6eDX3k?56a7821b8) :point_left:
-
-##
-
-- Live Demo Link --> App Deployed with Heroku: [rails-capstone](https://hidden-savannah-73971.herokuapp.com) :point_left:
+- Live Demo Link --> [rails-capstone](https://whispering-journey-14460.herokuapp.com/) :point_left:
 
 ### Getting Started
 
@@ -35,29 +31,25 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- Ruby: 3.3.0
+- Ruby: 2.7
 - Rails: 6.1.3.1
 - PostgreSQL is necessary
 - Install Yarn
 
 ### Clone
 
-- [download zip link](https://github.com/JohnHernCode/Rails-Capstone/archive/refs/heads/develop.zip) or clone this repo:
-  - Clone with SSH:
-  ```
-    git@github.com:JohnHernCode/Rails-Capstone.git
-  ```
-  - Clone with HTTPS
-  ```
-    https://github.com/JohnHernCode/Rails-Capstone.git
-  ```
+- Clone with HTTPS
+
+```
+ https://github.com/FdI96/LifeStyleArticle.git
+```
 
 ### Setup
 
 Install gems with:
 
 ```
-$ bundler install --without production
+$ bundle install
 ```
 
 Setup database with:
@@ -81,13 +73,13 @@ Open `http://localhost:3000/` in your browser and click sign up to create a new 
 
 - for any technical problems running `rails db:migrate:reset && rails db:seed && rake database:correction_seq_id ` should solve it
 
-#### Create User and Log In
+#### Sign Up and Log In
 
 Fill the sign up form to create a user
 
-#### Create a new article from the menu
+#### Create a new article
 
-Type your title and text, add an image, and category
+Type the title, text, upload an image and put it under a category.
 
 ## Automated Test
 
@@ -108,17 +100,17 @@ Type your title and text, add an image, and category
 
 ## Contributors
 
-👤 **John Hernandez**
+👤 **Federico Ignacio Lopez Cechini**
 
-- GitHub: [@johnhernandez-code](https://github.com/johnhernandez-code)
-- Twitter: [@JohnHernCode](https://twitter.com/JohnHernCode)
-- LinkedIn: [John Hernandez](https://www.linkedin.com/in/john-hernandez-56a7821b8/)
+- GitHub: [@FdI96](https://github.com/FdI96)
+- Twitter: [@federicolopezc7](https://twitter.com/federicolopezc7)
+- LinkedIn: [Federico Ignacio Lopez Cechini](https://www.linkedin.com/in/federico-ignacio-lopez-cechini-3285411a4/)
 
 ## :handshake: Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/JohnHernCode/Rails-Capstone/issues).
+Feel free to check the [issues page](https://github.com/FdI96/LifeStyleArticle/issues).
 
 ## Show your support
 
@@ -141,4 +133,4 @@ Give a :star: if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+This project is [MIT](https://github.com/FdI96/LifeStyleArticle/blob/develop/LICENSE) licensed.
