@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
+    @categories = Category.all
     @article = Article.new(article_params)
 
     respond_to do |format|
