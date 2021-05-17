@@ -3,12 +3,13 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.order('created_at DESC')
+    @articles = Article.order(created_at: :desc)
   end
 
   # GET /articles/1 or /articles/1.json
   def show
     @categories = Category.all
+    @category = Category.find(@article.category_id)
   end
 
   # GET /articles/new
