@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
     @articles = Article.order(created_at: :desc)
   end
 
+  def all
+    @articles = Article.order(created_at: :desc)
+  end
+
   # GET /articles/1 or /articles/1.json
   def show
     @categories = Category.all
