@@ -3,6 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+# Cloudinary gem to upload images on Heroku
+gem 'cloudinary'
+
+# to handle cloudinary
+gem 'image_processing', '~> 1.2'
+# Handle image on heroku
+gem 'active_model_serializers'
+gem 'active_storage_validations'
+
+# Create env file
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record
@@ -33,13 +45,21 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# the previous webpacker's version was 3.5
+gem 'webpacker', '~> 5.0'
 
-gem 'webpacker', '~> 3.5'
+# Because I'm using webpacker it dind't work anyways.
+gem 'jquery-rails'
 
+# to make the link_to and sign_out route with devise work
+gem 'rails-ujs'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
+
+# bullet gem to kill N+1 querys
+gem 'bullet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

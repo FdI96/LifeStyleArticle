@@ -2,7 +2,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @article.author_id %>
+  <%= @article.author.username %>
 </p>
 
 <p>
@@ -16,14 +16,16 @@
 </p>
 
 <p>
+  <%= vote_or_unvote_btn(@article) %>
+  Votes: <%= @article.votes.length%>
+</p>
+
+<p>
   <strong>Image:</strong>
-  <%= @article.image %>
+  <img src="<%=(url_for(@article.image))%>" alt="Img from <%=@article.author.username%>">
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @article.category_id %>
+  <%= @category.name %>
 </p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

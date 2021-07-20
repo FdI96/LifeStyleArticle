@@ -1,6 +1,16 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.after_initialize do
+    Bullet.enable        = true
+    Bullet.alert         = true
+    Bullet.bullet_logger = true
+    Bullet.console       = true
+  # Bullet.growl         = true
+    Bullet.rails_logger  = true
+    Bullet.add_footer    = true
+  end
+
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = true
   # Settings specified here will take precedence over those in config/application.rb.
@@ -76,4 +86,9 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Active storage configuration
+
 end
+
+Rails.application.routes.default_url_options[:host] = "localhost:3000"

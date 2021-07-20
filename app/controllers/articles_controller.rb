@@ -3,15 +3,23 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order(created_at: :desc)
+  end
+
+  def all
+    @articles = Article.order(created_at: :desc)
   end
 
   # GET /articles/1 or /articles/1.json
-  def show; end
+  def show
+    @categories = Category.all
+    @category = Category.find(@article.category_id)
+  end
 
   # GET /articles/new
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   # GET /articles/1/edit
@@ -19,6 +27,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
+    @categories = Category.all
     @article = Article.new(article_params)
 
     respond_to do |format|

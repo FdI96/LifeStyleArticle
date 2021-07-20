@@ -1,19 +1,8 @@
 <%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= display_errors(article) %>
 
   <div class="field">
-    <%= form.label :author_id %>
-    <%= form.number_field :author_id %>
+    <%= form.hidden_field :author_id, :value => current_user.id %>
   </div>
 
   <div class="field">
@@ -27,13 +16,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.label 'Profile photo' %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.number_field :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, {prompt: "Select Category"} %>
   </div>
 
   <div class="actions">

@@ -4,13 +4,17 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
+    @articles = Article.with_attached_image.includes([:votes])
   end
 
   # GET /categories/1 or /categories/1.json
-  def show; end
+  def show
+    @categories = Category.all
+  end
 
   # GET /categories/new
   def new
+    @categories = Category.all
     @category = Category.new
   end
 
